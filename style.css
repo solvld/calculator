@@ -1,0 +1,80 @@
+:root{
+  --scale: 1px;
+  --window-height: calc(332 * var(--scale));
+  --window-width: calc(232 * var(--scale));
+
+  --orange: #F39C12;
+  --ornageHover: #D18710;
+  --primary: #292B2F;
+  --btnLight: #5D5E60;
+  --btnDark: #3E3F41;
+  --btnHover: #797D7F; 
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body{
+  background-color: rgb(23, 23, 23);
+  height: 100vh;
+  color: gainsboro;
+  user-select: none;
+}
+
+table,tr,td{
+  border: 1px solid var(--primary);
+  border-collapse: collapse;
+}
+
+table{
+  table-layout: fixed;
+  width: var(--window-width);
+}
+
+#display{
+  height: calc(var(--window-height)/4);
+  text-align: right;
+  padding-right: 20px;
+  font-size: calc(54 * var(--scale));
+  font-weight: 100;
+  vertical-align: bottom;
+  background-color: var(--primary);
+}
+
+td{
+  font-size: 32px;
+  height: calc(var(--window-height)/7);
+  background-color: var(--btnLight);
+
+  text-align: center;
+  font-size: calc(20 * var(--scale));
+  width: 10px !important;
+}
+
+td:hover{
+  background-color: var(--btnHover);
+}
+
+tr:last-child td{
+  height: calc(var(--window-height)/7 + 4px) !important;
+}
+
+.orange{
+  background-color: var(--orange);
+}
+.orange:hover{
+  background-color: var(--ornageHover);
+}
+
+.dark{
+  background-color: var(--btnDark);
+}
+.dark:hover{
+  background-color: var(--btnLight);
+}
