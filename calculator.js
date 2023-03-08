@@ -24,9 +24,24 @@ buttons.forEach((button) => {
       fistOperand = parseFloat(display.innerText);
       currentOperand = '';
     }else if (target.id === "equal"){
+      if (operator){
+        const secondOperand = parseFloat(display.innerText)
+        if (operator === "+"){
+          fistOperand = fistOperand + secondOperand
+        }else if (operator === "−"){
+          fistOperand = fistOperand - secondOperand
+        }else if (operator === "×"){
+          fistOperand = fistOperand * secondOperand
+        }else if (operator === "÷"){
+          fistOperand = fistOperand / secondOperand
+        }
+        operator = null;
+        currentOperand = fistOperand.toString();
+        display.innerText = fistOperand;
+      }
 
     }else{
-      if (value === ',' && currentOperand.includes(',')){
+      if (value === '.' && currentOperand.includes('.')){
         return;
       }
       currentOperand += value;
